@@ -1,0 +1,25 @@
+<html>
+
+<body>
+
+try this button
+<button onclick="crash1()">
+click me
+</button>
+
+<script>
+    function crash1(){
+        function* fibs() {
+            let a = 0;
+            let b = 1;
+            while (true) {
+                yield a;
+                [a, b] = [b, a + b];
+            }
+        }
+        [c, ...d] = fibs();
+    }
+</script>
+</body>
+
+</html>
